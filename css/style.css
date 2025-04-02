@@ -5,127 +5,203 @@
     padding: 0;
 }
 
-body {
-    font-family: 'Lato', sans-serif; /* Nice readable sans-serif font */
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9; /* Light grey background */
-    margin: 0;
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for any potential anchor links */
 }
 
-/* Header Styling */
+/* --- Dark Theme --- */
+body.dark-theme {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+    background-color: #1a1a1a; /* Very dark grey background */
+    color: #e0e0e0; /* Light grey text */
+    margin: 0;
+    font-weight: 400;
+}
+
+/* --- Header Styling --- */
 .main-header {
-    background-color: #2c3e50; /* Dark blue-grey header */
-    color: #ecf0f1; /* Light text color for header */
-    padding: 2rem 1rem; /* Generous padding */
+    background-color: #0d0d0d; /* Even darker header */
+    color: #f5f5f5; /* White-ish text */
+    padding: 3rem 1rem;
     text-align: center;
+    border-bottom: 1px solid #333; /* Subtle border */
 }
 
 .main-header h1 {
-    font-family: 'Montserrat', sans-serif; /* Different font for the name */
-    font-size: 3rem; /* Large font size */
-    font-weight: 700; /* Bold */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem; /* Larger */
+    font-weight: 700;
     margin: 0;
+    letter-spacing: 1px;
 }
 
-/* Content Wrapper */
+/* --- Content Wrapper --- */
 .content-wrapper {
-    max-width: 960px; /* Maximum width of content */
-    margin: 2rem auto; /* Center the content with space top/bottom */
-    padding: 0 1rem; /* Padding on the sides */
+    max-width: 1200px; /* Wider max-width for gallery */
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
 }
 
-/* Section Styling */
+/* --- Section Styling --- */
 .about-section,
 .gallery-section {
-    background-color: #ffffff; /* White background for sections */
-    padding: 2rem;
-    margin-bottom: 2rem; /* Space between sections */
-    border-radius: 5px; /* Slightly rounded corners */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+    background-color: #262626; /* Slightly lighter dark grey for sections */
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow for dark theme */
 }
 
 section h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    color: #3498db; /* A nice blue for section headers */
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #ecf0f1; /* Light separator line */
+    font-size: 2rem;
+    color: #5dade2; /* A nice light blue for headers */
+    margin-bottom: 2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #444;
     text-align: center;
+    font-weight: 700;
 }
 
-/* About Section Specifics */
+/* --- About Section Specifics --- */
 .about-section p {
     margin-bottom: 1rem;
-    text-align: justify; /* Justified text can look neat for paragraphs */
+    text-align: left; /* Or justify if you prefer */
+    max-width: 800px; /* Limit width for readability */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Gallery Styling */
+/* --- Gallery Styling --- */
 .gallery-section {
-    text-align: center; /* Center figures within the gallery */
+    padding-bottom: 3rem;
 }
 
-.photo-item {
-    margin-bottom: 3rem; /* Space between photo items */
-    display: inline-block; /* Allows centering */
-    width: 100%; /* Take full width within its container */
-    max-width: 700px; /* Limit max width of the figure */
-    text-align: left; /* Reset text align for caption if needed */
+.photo-grid {
+    display: grid;
+    /* Responsive columns: min 280px, max 1fr (takes equal space) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; /* Increased gap */
 }
 
-.photo-item img {
-    display: block; /* Remove extra space below image */
-    max-width: 100%; /* Makes image responsive - crucial! */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto 0.75rem auto; /* Center image, add space below */
-    border-radius: 3px; /* Optional: slightly rounded corners for images */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow on images */
+.grid-item {
+    background-color: #333; /* Slightly different background for item */
+    border-radius: 5px;
+    overflow: hidden; /* Important for hover effect */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative; /* Needed if you were to absolutely position captions */
+    padding-bottom: 0.5rem; /* Space for caption below */
 }
 
-.photo-item figcaption {
-    font-size: 0.9rem;
-    color: #555; /* Darker grey for captions */
-    text-align: center; /* Center the caption text */
-    font-style: italic; /* Italicize captions */
+.grid-item:hover {
+    transform: translateY(-5px) scale(1.02); /* Lift and slightly scale on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Footer Styling */
+.grid-item a {
+    display: block; /* Make link fill the space */
+    text-decoration: none;
+}
+
+.grid-item img {
+    display: block;
+    width: 100%; /* Make image fill container width */
+    height: 250px; /* Fixed height for uniform grid look */
+    object-fit: cover; /* Crop image to fit, maintain aspect ratio */
+    transition: opacity 0.3s ease;
+    border-bottom: 1px solid #444; /* Separator before caption */
+}
+
+/* Optional: slight fade on hover */
+.grid-item a:hover img {
+   opacity: 0.9;
+}
+
+.grid-caption {
+    font-size: 0.85rem;
+    color: #bbb; /* Lighter grey for grid caption */
+    text-align: center;
+    padding: 0.75rem 0.5rem 0.25rem 0.5rem; /* Padding around caption */
+    font-style: italic;
+    font-weight: 400;
+    display: block; /* Ensure it takes block space */
+}
+
+/* --- Footer Styling --- */
 .main-footer {
     text-align: center;
-    padding: 1.5rem 1rem;
-    margin-top: 2rem;
-    font-size: 0.85rem;
-    color: #777;
-    border-top: 1px solid #eee; /* Subtle top border */
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #888; /* Dimmed footer text */
+    border-top: 1px solid #333;
 }
 
-/* Responsive Adjustments (Optional but good) */
+/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
     .main-header h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
     .content-wrapper {
-        margin: 1rem auto;
-        padding: 0 0.5rem;
+        padding: 0 1rem;
     }
     .about-section,
     .gallery-section {
-        padding: 1.5rem;
+        padding: 2rem;
     }
     section h2 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
+    }
+    .photo-grid {
+        gap: 1rem;
+        /* Adjust minmax if needed for smaller screens */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .grid-item img {
+         height: 220px; /* Adjust fixed height for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .main-header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     section h2 {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
-    .photo-item figcaption {
-        font-size: 0.85rem;
+     .about-section,
+    .gallery-section {
+        padding: 1.5rem;
+        border-radius: 5px;
+    }
+     .photo-grid {
+        /* Force single column on very small screens */
+        grid-template-columns: 1fr;
+         gap: 1.5rem; /* Reset gap for single column */
+    }
+     .grid-item img {
+         height: 280px; /* Can be taller in single column */
+    }
+    .grid-caption {
+        font-size: 0.8rem;
     }
 }
+
+/* --- Fancybox Dark Theme Adjustments (Optional but nice) --- */
+/* You might need to inspect Fancybox elements to target them correctly */
+/* These are examples, check current Fancybox V5 classes if needed */
+body .fancybox__container {
+    --fancybox-bg: rgba(10, 10, 10, 0.9); /* Darker lightbox background */
+    --fancybox-color: #e0e0e0; /* Light text */
+}
+
+.fancybox__caption {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-top: 1px solid #444;
+}
+
+/* Adjust button colors if needed */
+/* .fancybox__button { ... } */
