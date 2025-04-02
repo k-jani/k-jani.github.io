@@ -1,0 +1,131 @@
+/* Basic Reset & Defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif; /* Nice readable sans-serif font */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9; /* Light grey background */
+    margin: 0;
+}
+
+/* Header Styling */
+.main-header {
+    background-color: #2c3e50; /* Dark blue-grey header */
+    color: #ecf0f1; /* Light text color for header */
+    padding: 2rem 1rem; /* Generous padding */
+    text-align: center;
+}
+
+.main-header h1 {
+    font-family: 'Montserrat', sans-serif; /* Different font for the name */
+    font-size: 3rem; /* Large font size */
+    font-weight: 700; /* Bold */
+    margin: 0;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    max-width: 960px; /* Maximum width of content */
+    margin: 2rem auto; /* Center the content with space top/bottom */
+    padding: 0 1rem; /* Padding on the sides */
+}
+
+/* Section Styling */
+.about-section,
+.gallery-section {
+    background-color: #ffffff; /* White background for sections */
+    padding: 2rem;
+    margin-bottom: 2rem; /* Space between sections */
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #3498db; /* A nice blue for section headers */
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ecf0f1; /* Light separator line */
+    text-align: center;
+}
+
+/* About Section Specifics */
+.about-section p {
+    margin-bottom: 1rem;
+    text-align: justify; /* Justified text can look neat for paragraphs */
+}
+
+/* Gallery Styling */
+.gallery-section {
+    text-align: center; /* Center figures within the gallery */
+}
+
+.photo-item {
+    margin-bottom: 3rem; /* Space between photo items */
+    display: inline-block; /* Allows centering */
+    width: 100%; /* Take full width within its container */
+    max-width: 700px; /* Limit max width of the figure */
+    text-align: left; /* Reset text align for caption if needed */
+}
+
+.photo-item img {
+    display: block; /* Remove extra space below image */
+    max-width: 100%; /* Makes image responsive - crucial! */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto 0.75rem auto; /* Center image, add space below */
+    border-radius: 3px; /* Optional: slightly rounded corners for images */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow on images */
+}
+
+.photo-item figcaption {
+    font-size: 0.9rem;
+    color: #555; /* Darker grey for captions */
+    text-align: center; /* Center the caption text */
+    font-style: italic; /* Italicize captions */
+}
+
+/* Footer Styling */
+.main-footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #777;
+    border-top: 1px solid #eee; /* Subtle top border */
+}
+
+/* Responsive Adjustments (Optional but good) */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2.5rem;
+    }
+    .content-wrapper {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+    .about-section,
+    .gallery-section {
+        padding: 1.5rem;
+    }
+    section h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header h1 {
+        font-size: 2rem;
+    }
+    section h2 {
+        font-size: 1.4rem;
+    }
+    .photo-item figcaption {
+        font-size: 0.85rem;
+    }
+}
