@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CHANGE THIS: Replace 'Your Name' with your actual name -->
-    <title>Your Name - Media Portfolio</title>
+    <title>Your Name - Photography Portfolio</title> <!-- CHANGE 'Your Name' -->
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Using Montserrat for headings and Lato for body text -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome for Icons (Optional, but nice for contact links) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Fancybox CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
@@ -21,91 +18,82 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body> <!-- Removed the problematic comment here -->
+<body>
 
     <header class="main-header">
-        <!-- CHANGE THIS: Replace 'Your Name' -->
-        <h1>Your Name</h1>
-        <p class="subtitle">Aspiring Media Intern | Photography & Visuals</p> <!-- Added a subtitle -->
+        <h1>Your Name</h1> <!-- CHANGE 'Your Name' -->
     </header>
 
     <main class="content-wrapper">
-        <section id="about" class="content-section">
+        <section id="about" class="about-section">
             <h2>About Me</h2>
-            <!-- CHANGE THIS: Write a compelling bio focused on media/visuals -->
             <p>
-                Welcome! I'm [Your Name], a passionate visual storyteller currently seeking a media internship. I thrive on capturing compelling moments and crafting engaging visual narratives.
+                Welcome to my portfolio! I'm passionate about capturing moments...
+                <!-- REPLACE with your actual About Me text. Add more <p> tags if needed. -->
+                Write a few sentences or paragraphs about yourself, your style,
+                your inspiration, or anything relevant to your photography.
             </p>
-            <p>
-                Through my photography, I aim to [mention your goal - e.g., evoke emotion, document reality, explore creativity]. This portfolio showcases some of my recent work. I'm eager to apply my skills and learn within a dynamic media environment.
-            </p>
-            <!-- Add more paragraphs if needed -->
         </section>
 
-        <section id="gallery" class="content-section gallery-section">
+        <section id="gallery" class="gallery-section">
             <h2>Gallery</h2>
-            <p class="gallery-intro">Click on any image to view it in a larger format.</p>
 
-            <div class="gallery-grid"> <!-- Added a wrapper for potential layout changes later -->
+            <!-- === Start Photo Item === -->
+            <figure class="photo-item">
+                <a href="photos/photo1.jpg" data-fancybox="gallery" data-caption="Caption for photo 1 (shows in lightbox)">
+                    <!-- Display the THUMBNAIL version on the page -->
+                    <img src="photos/photo1.jpg" alt="Descriptive text about photo 1" loading="lazy">
+                </a>
+                 <!-- Caption visible directly below the image on the page -->
+                <figcaption>Caption 1</figcaption>
+                 <!--
+                    IMPORTANT:
+                    1. `href` in <a>: Link to the LARGE, optimized version for Fancybox.
+                    2. `data-fancybox="gallery"`: Groups images into one gallery.
+                    3. `data-caption`: Text shown in the Fancybox lightbox overlay.
+                    4. `src` in <img>: Link to the SMALLER thumbnail version for the main page display.
+                    5. `alt`: Essential description for accessibility.
+                    6. `loading="lazy"`: Defers loading off-screen thumbnails.
+                    7. `<figcaption>`: Visible caption below the image on the main page.
+                 -->
+            </figure>
+            <!-- === End Photo Item === -->
 
-                <!-- === Start Photo Item === -->
-                <figure class="photo-item">
-                    <!-- CHANGE THIS: Update href, data-caption, src, alt, and figcaption -->
-                    <a href="photos/photo1.jpg" data-fancybox="gallery" data-caption="Detailed caption for Photo 1 (shows in lightbox)">
-                        <!-- Use a smaller, optimized thumbnail for the src -->
-                        <img src="photos/photo1.jpg" alt="Descriptive alt text for photo 1" loading="lazy">
-                    </a>
-                    <figcaption>Brief Caption 1</figcaption>
-                     <!--
-                        REMINDER:
-                        1. `href`: Link to LARGE, WEB-OPTIMIZED version.
-                        2. `src`: Link to SMALLER THUMBNAIL version.
-                        3. `alt`: Essential description.
-                        4. `data-caption`: Lightbox caption.
-                        5. `figcaption`: On-page caption.
-                        6. Optimize BOTH image versions for web (size & compression)!
-                     -->
-                </figure>
-                <!-- === End Photo Item === -->
+            <!-- === Start Photo Item === -->
+            <figure class="photo-item">
+                <a href="photos/photo2.jpg" data-fancybox="gallery" data-caption="A different, maybe longer, caption for photo 2 in the lightbox.">
+                    <img src="photos/photo2.jpg" alt="Descriptive text about photo 2" loading="lazy">
+                </a>
+                <figcaption>Caption 2</figcaption>
+            </figure>
+            <!-- === End Photo Item === -->
 
-                <!-- === Start Photo Item === -->
-                <figure class="photo-item">
-                     <!-- CHANGE THIS: Update href, data-caption, src, alt, and figcaption -->
-                    <a href="photos/photo2.jpg" data-fancybox="gallery" data-caption="Another detailed caption, maybe explaining the context of Photo 2">
-                        <img src="photos/photo2.jpg" alt="Descriptive alt text for photo 2" loading="lazy">
-                    </a>
-                    <figcaption>Brief Caption 2</figcaption>
-                </figure>
-                <!-- === End Photo Item === -->
+            <!-- === Start Photo Item === -->
+            <figure class="photo-item">
+                <a href="photos/photo3.jpg" data-fancybox="gallery" data-caption="Caption number three for the lightbox view.">
+                    <img src="photos/photo3.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                </a>
+                <figcaption>Caption 3</figcaption>
+            </figure>
+            <!-- === End Photo Item === -->
 
-                <!-- === Start Photo Item === -->
-                <figure class="photo-item">
-                     <!-- CHANGE THIS: Update href, data-caption, src, alt, and figcaption -->
-                    <a href="photos/photo3.jpg" data-fancybox="gallery" data-caption="Lightbox caption for the third image">
-                        <img src="photos/photo3.jpg" alt="Descriptive alt text for photo 3" loading="lazy">
-                    </a>
-                    <figcaption>Brief Caption 3</figcaption>
-                </figure>
-                <!-- === End Photo Item === -->
+            <!-- === Add More Photo Items Here === -->
+            <!-- Copy and paste the <figure class="photo-item"> block above for each new photo. -->
+            <!-- Remember to change href, data-caption, src, alt, and figcaption for each one. -->
 
-                <!-- === Add More Photo Items Here === -->
-                <!-- Copy, paste, and CHANGE the <figure> block for each photo -->
-
-            </div> <!-- End gallery-grid -->
         </section>
-
     </main>
 
     <footer class="main-footer">
-        <!-- CHANGE THIS: Update year and name -->
-        <p>© 2024 Your Name. All rights reserved.</p>
+        <p>© 2023 Your Name. All rights reserved.</p> <!-- CHANGE Year and Name -->
     </footer>
 
     <!-- Fancybox JS -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script>
       // Initialize Fancybox
-      Fancybox.bind("[data-fancybox='gallery']", { // More specific selector
+      Fancybox.bind("[data-fancybox]", {
+        // Optional: Custom options here
         buttons: [
             "slideShow",
             "thumbs",
@@ -113,11 +101,8 @@
             "fullScreen",
             "close"
         ],
-        loop: true,
-        infobar: true,
-        // Add a subtle animation
-        showClass: "fancybox-fadeIn",
-        hideClass: "fancybox-fadeOut",
+        loop: true, // Go from last image back to first
+        infobar: true, // Show "1 / 3" indicator
       });
     </script>
 
