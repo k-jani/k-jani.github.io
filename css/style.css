@@ -6,60 +6,63 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Smooth scrolling for any potential anchor links */
+    scroll-behavior: smooth;
 }
 
-/* --- Dark Theme --- */
-body.dark-theme {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.7;
-    background-color: #1a1a1a; /* Very dark grey background */
-    color: #e0e0e0; /* Light grey text */
+/* --- Black Theme --- */
+body {
+    font-family: 'Lato', sans-serif; /* Switched back to Lato for body */
+    line-height: 1.6;
+    background-color: #000000; /* Pure black background */
+    color: #ffffff; /* White text */
     margin: 0;
     font-weight: 400;
 }
 
 /* --- Header Styling --- */
 .main-header {
-    background-color: #0d0d0d; /* Even darker header */
-    color: #f5f5f5; /* White-ish text */
-    padding: 3rem 1rem;
+    background-color: #1a1a1a; /* Very dark grey header, contrast with black */
+    color: #ffffff; /* White text */
+    padding: 2.5rem 1rem;
     text-align: center;
-    border-bottom: 1px solid #333; /* Subtle border */
+    border-bottom: 1px solid #333; /* Dark grey border */
 }
 
 .main-header h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3.5rem; /* Larger */
+    font-family: 'Montserrat', sans-serif; /* Distinct heading font */
+    font-size: 3rem;
     font-weight: 700;
     margin: 0;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 /* --- Content Wrapper --- */
 .content-wrapper {
-    max-width: 1200px; /* Wider max-width for gallery */
-    margin: 2.5rem auto;
-    padding: 0 1.5rem;
+    /* Using the original simpler max-width */
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
 /* --- Section Styling --- */
 .about-section,
 .gallery-section {
-    background-color: #262626; /* Slightly lighter dark grey for sections */
-    padding: 2.5rem;
-    margin-bottom: 2.5rem;
-    border-radius: 8px; /* More rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow for dark theme */
+    /* Slightly lighter dark background for sections */
+    background-color: #111111;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.05); /* Subtle white glow/shadow */
+    border: 1px solid #222; /* Very subtle border */
 }
 
 section h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    color: #5dade2; /* A nice light blue for headers */
-    margin-bottom: 2rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 2px solid #444;
+    font-size: 1.8rem;
+    color: #eeeeee; /* Slightly off-white for headings */
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #444; /* Lighter grey separator */
     text-align: center;
     font-weight: 700;
 }
@@ -67,141 +70,118 @@ section h2 {
 /* --- About Section Specifics --- */
 .about-section p {
     margin-bottom: 1rem;
-    text-align: left; /* Or justify if you prefer */
-    max-width: 800px; /* Limit width for readability */
+    text-align: left;
+    max-width: 750px; /* Limit width for readability */
     margin-left: auto;
     margin-right: auto;
+    color: #dddddd; /* Slightly dimmer text for paragraphs */
 }
 
-/* --- Gallery Styling --- */
+/* --- Gallery Styling (Reverted to simple vertical stack) --- */
 .gallery-section {
-    padding-bottom: 3rem;
+    text-align: center; /* Centers the figure block if its width is constrained */
 }
 
-.photo-grid {
-    display: grid;
-    /* Responsive columns: min 280px, max 1fr (takes equal space) */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem; /* Increased gap */
+.photo-item {
+    margin-bottom: 3rem; /* Space between photo items */
+    display: block; /* Make figure take full width available */
+    max-width: 700px; /* Max width of the photo container (adjust as needed) */
+    margin-left: auto; /* Center the figure block */
+    margin-right: auto; /* Center the figure block */
 }
 
-.grid-item {
-    background-color: #333; /* Slightly different background for item */
-    border-radius: 5px;
-    overflow: hidden; /* Important for hover effect */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    position: relative; /* Needed if you were to absolutely position captions */
-    padding-bottom: 0.5rem; /* Space for caption below */
+.photo-item a {
+    display: block; /* Ensure link wraps image correctly */
+    cursor: zoom-in; /* Indicate the image is clickable */
 }
 
-.grid-item:hover {
-    transform: translateY(-5px) scale(1.02); /* Lift and slightly scale on hover */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+/* THIS IS THE KEY for image sizing on the main page */
+.photo-item img {
+    display: block; /* Remove extra space below image */
+    max-width: 100%; /* Makes image responsive - IT WON'T EXCEED CONTAINER WIDTH */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto 0.75rem auto; /* Center image within figure, add space below */
+    border-radius: 3px; /* Optional: slightly rounded corners */
+    border: 1px solid #333; /* Subtle border around image */
 }
 
-.grid-item a {
-    display: block; /* Make link fill the space */
-    text-decoration: none;
-}
-
-.grid-item img {
-    display: block;
-    width: 100%; /* Make image fill container width */
-    height: 250px; /* Fixed height for uniform grid look */
-    object-fit: cover; /* Crop image to fit, maintain aspect ratio */
-    transition: opacity 0.3s ease;
-    border-bottom: 1px solid #444; /* Separator before caption */
-}
-
-/* Optional: slight fade on hover */
-.grid-item a:hover img {
-   opacity: 0.9;
-}
-
-.grid-caption {
-    font-size: 0.85rem;
-    color: #bbb; /* Lighter grey for grid caption */
-    text-align: center;
-    padding: 0.75rem 0.5rem 0.25rem 0.5rem; /* Padding around caption */
+.photo-item figcaption {
+    font-size: 0.9rem;
+    color: #bbbbbb; /* Lighter grey for captions */
+    text-align: center; /* Center the caption text */
     font-style: italic;
-    font-weight: 400;
-    display: block; /* Ensure it takes block space */
+    padding: 0 0.5rem; /* Add some horizontal padding if needed */
 }
 
 /* --- Footer Styling --- */
 .main-footer {
     text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 3rem;
-    font-size: 0.9rem;
-    color: #888; /* Dimmed footer text */
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #777777; /* Dim grey for footer */
     border-top: 1px solid #333;
 }
+
+/* --- Links --- */
+a {
+   color: #6bb9f0; /* Light blue for links */
+   text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Fancybox Dark Theme Adjustments --- */
+body .fancybox__container {
+    --fancybox-bg: rgba(10, 10, 10, 0.92); /* Darker lightbox background */
+    --fancybox-color: #e5e5e5; /* Light text */
+}
+.fancybox__caption {
+    background: rgba(0, 0, 0, 0.8); /* Darker caption background */
+    padding: 15px 20px;
+    border-top: 1px solid #444;
+    color: #ccc; /* Caption text color */
+}
+/* Adjust button colors if needed */
+.fancybox__button {
+   color: #ccc; /* Light color for buttons */
+}
+.fancybox__button:hover {
+   color: #fff;
+   background: rgba(255, 255, 255, 0.1); /* Slight background on hover */
+}
+
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
     .main-header h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
     .content-wrapper {
-        padding: 0 1rem;
+        margin: 1.5rem auto;
+        padding: 0 0.8rem;
     }
     .about-section,
     .gallery-section {
-        padding: 2rem;
+        padding: 1.5rem;
     }
     section h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
-    .photo-grid {
-        gap: 1rem;
-        /* Adjust minmax if needed for smaller screens */
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .grid-item img {
-         height: 220px; /* Adjust fixed height for smaller screens */
+    .photo-item {
+        max-width: 95%; /* Allow images to be slightly wider on smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .main-header h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     section h2 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
-     .about-section,
-    .gallery-section {
-        padding: 1.5rem;
-        border-radius: 5px;
-    }
-     .photo-grid {
-        /* Force single column on very small screens */
-        grid-template-columns: 1fr;
-         gap: 1.5rem; /* Reset gap for single column */
-    }
-     .grid-item img {
-         height: 280px; /* Can be taller in single column */
-    }
-    .grid-caption {
-        font-size: 0.8rem;
+    .photo-item figcaption {
+        font-size: 0.85rem;
     }
 }
-
-/* --- Fancybox Dark Theme Adjustments (Optional but nice) --- */
-/* You might need to inspect Fancybox elements to target them correctly */
-/* These are examples, check current Fancybox V5 classes if needed */
-body .fancybox__container {
-    --fancybox-bg: rgba(10, 10, 10, 0.9); /* Darker lightbox background */
-    --fancybox-color: #e0e0e0; /* Light text */
-}
-
-.fancybox__caption {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 15px;
-    border-top: 1px solid #444;
-}
-
-/* Adjust button colors if needed */
-/* .fancybox__button { ... } */
