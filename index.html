@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Photography Portfolio</title> <!-- CHANGE 'Your Name' -->
-    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
-<body>
+<body class="dark-theme">
 
     <header class="main-header">
         <h1>Your Name</h1> <!-- CHANGE 'Your Name' -->
@@ -29,43 +37,76 @@
         <section id="gallery" class="gallery-section">
             <h2>Gallery</h2>
 
-            <!-- === Start Photo Item === -->
-            <figure class="photo-item">
-                <img src="photos/photo1.jpg" alt="Descriptive text about photo 1" loading="lazy">
-                <!--
-                    IMPORTANT:
-                    1. Change 'your-photo1.jpg' to your actual filename in the 'photos' folder.
-                    2. Change 'Descriptive text about photo 1' to a good description for accessibility and SEO.
-                    3. 'loading="lazy"' helps performance by loading images only when they are close to being scrolled into view.
-                 -->
-                <figcaption>Caption for photo 1 goes here.</figcaption> <!-- CHANGE Caption -->
-            </figure>
-            <!-- === End Photo Item === -->
+            <div class="photo-grid">
 
-            <!-- === Start Photo Item === -->
-            <figure class="photo-item">
-                <img src="photos/photo2.jpg" alt="Descriptive text about photo 2" loading="lazy">
-                <figcaption>A different caption for the second photo.</figcaption> <!-- CHANGE Caption -->
-            </figure>
-            <!-- === End Photo Item === -->
+                <!-- === Start Grid Item === -->
+                <div class="grid-item">
+                    <a href="photos/photo1.jpg" data-fancybox="gallery" data-caption="Caption for photo 1 goes here. Can be longer for the lightbox.">
+                        <img src="photos/photo2.jpg" alt="Descriptive text about photo 1" loading="lazy">
+                    </a>
+                    <figcaption class="grid-caption">Caption 1</figcaption> <!-- Optional shorter caption for grid view -->
+                     <!--
+                        IMPORTANT:
+                        1. `href`: Link to the LARGE, optimized version for Fancybox.
+                        2. `data-fancybox="gallery"`: Groups images into one gallery.
+                        3. `data-caption`: Text shown in the Fancybox lightbox.
+                        4. `src` in <img>: Link to the SMALL thumbnail version for fast grid loading.
+                        5. `alt`: Essential description for accessibility.
+                        6. `loading="lazy"`: Defers loading off-screen thumbnails.
+                        7. `.grid-caption`: Optional visible caption below the thumbnail.
+                     -->
+                </div>
+                <!-- === End Grid Item === -->
 
-            <!-- === Start Photo Item === -->
-            <figure class="photo-item">
-                <img src="photos/photo3.jpg" alt="Descriptive text about photo 3" loading="lazy">
-                <figcaption>Caption number three.</figcaption> <!-- CHANGE Caption -->
-            </figure>
-            <!-- === End Photo Item === -->
+                <!-- === Start Grid Item === -->
+                <div class="grid-item">
+                    <a href="photos/photo2.jpg" data-fancybox="gallery" data-caption="A different caption for the second photo, maybe more detailed.">
+                        <img src="photos/photo3.jpg" alt="Descriptive text about photo 2" loading="lazy">
+                    </a>
+                     <figcaption class="grid-caption">Caption 2</figcaption>
+                </div>
+                <!-- === End Grid Item === -->
 
-            <!-- === Add More Photo Items Here === -->
-            <!-- Copy and paste the <figure> block above for each new photo. -->
-            <!-- Remember to change the src, alt, and figcaption for each one. -->
+                <!-- === Start Grid Item === -->
+                <div class="grid-item">
+                    <a href="photos/photo3.jpg" data-fancybox="gallery" data-caption="Caption number three. This appears in the lightbox.">
+                        <img src="photos/photo1.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                    </a>
+                    <figcaption class="grid-caption">Caption 3</figcaption>
+                </div>
+                <!-- === End Grid Item === -->
 
+                
+                
+                <!-- === Add More Grid Items Here === -->
+                <!-- Copy/paste the <div class="grid-item"> block. Change href, data-caption, src, alt, and figcaption -->
+
+            </div> <!-- End .photo-grid -->
         </section>
     </main>
 
     <footer class="main-footer">
         <p>© 2023 Your Name. All rights reserved.</p> <!-- CHANGE Year and Name -->
     </footer>
+
+    <!-- Fancybox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      // Initialize Fancybox
+      Fancybox.bind("[data-fancybox]", {
+        // Optional: Custom options here
+        // Docs: https://fancyapps.com/fancybox/options/
+        buttons: [
+            "slideShow",
+            "thumbs",
+            "zoom",
+            "fullScreen",
+            "close"
+        ],
+        loop: true,
+        infobar: true,
+      });
+    </script>
 
 </body>
 </html>
