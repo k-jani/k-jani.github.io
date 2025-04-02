@@ -6,182 +6,300 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Nice smooth scroll for potential anchor links */
 }
 
-/* --- Black Theme --- */
+/* --- Core Theme (Dark) --- */
 body {
-    font-family: 'Lato', sans-serif; /* Switched back to Lato for body */
-    line-height: 1.6;
-    background-color: #000000; /* Pure black background */
-    color: #ffffff; /* White text */
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7; /* Slightly increased line-height for readability */
+    background-color: #0a0a0a; /* Very slightly off-black */
+    color: #e0e0e0; /* Slightly softer white */
     margin: 0;
     font-weight: 400;
+    display: flex; /* Helps footer stick to bottom if content is short */
+    flex-direction: column; /* Stack header, main, footer vertically */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
 }
+
+main {
+    flex-grow: 1; /* Allows main content to expand and push footer down */
+}
+
 
 /* --- Header Styling --- */
 .main-header {
-    background-color: #1a1a1a; /* Very dark grey header, contrast with black */
-    color: #ffffff; /* White text */
-    padding: 2.5rem 1rem;
+    background-color: #181818; /* Dark grey header */
+    color: #ffffff;
+    padding: 3rem 1rem 2rem 1rem; /* More top padding */
     text-align: center;
-    border-bottom: 1px solid #333; /* Dark grey border */
+    border-bottom: 1px solid #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
 .main-header h1 {
-    font-family: 'Montserrat', sans-serif; /* Distinct heading font */
-    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem; /* Slightly adjusted */
     font-weight: 700;
-    margin: 0;
-    letter-spacing: 0.5px;
+    margin: 0 0 0.25rem 0; /* Space below H1 */
+    letter-spacing: 1px; /* Added letter spacing */
+}
+
+.main-header .subtitle {
+    font-size: 1.1rem;
+    color: #bbbbbb;
+    font-weight: 400;
+    margin-top: 0.5rem;
 }
 
 /* --- Content Wrapper --- */
 .content-wrapper {
-    /* Using the original simpler max-width */
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    max-width: 1000px; /* Slightly wider */
+    margin: 3rem auto; /* More vertical margin */
+    padding: 0 1.5rem; /* More horizontal padding */
+    width: 90%; /* Ensure some padding on very wide screens */
 }
 
-/* --- Section Styling --- */
-.about-section,
-.gallery-section {
-    /* Slightly lighter dark background for sections */
-    background-color: #111111;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.05); /* Subtle white glow/shadow */
-    border: 1px solid #222; /* Very subtle border */
+/* --- Section Styling (Shared) --- */
+.content-section {
+    background-color: #1c1c1c; /* Darker section background */
+    padding: 2.5rem; /* More padding */
+    margin-bottom: 2.5rem; /* More space between sections */
+    border-radius: 8px; /* Softer radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    border: 1px solid #282828; /* Slightly more visible border */
 }
 
-section h2 {
+.content-section h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    color: #eeeeee; /* Slightly off-white for headings */
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #444; /* Lighter grey separator */
+    font-size: 2rem; /* Larger section titles */
+    color: #f5f5f5; /* Brighter white for headings */
+    margin-bottom: 2rem; /* More space below heading */
+    padding-bottom: 0.75rem; /* More space for border */
+    border-bottom: 1px solid #4a4a4a; /* More distinct separator */
     text-align: center;
     font-weight: 700;
 }
 
 /* --- About Section Specifics --- */
 .about-section p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     text-align: left;
-    max-width: 750px; /* Limit width for readability */
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
-    color: #dddddd; /* Slightly dimmer text for paragraphs */
+    color: #cccccc; /* Slightly brighter paragraph text */
+    font-size: 1.05rem; /* Slightly larger body text */
 }
 
-/* --- Gallery Styling (Reverted to simple vertical stack) --- */
-.gallery-section {
-    text-align: center; /* Centers the figure block if its width is constrained */
+/* --- Gallery Styling --- */
+.gallery-section .gallery-intro {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #aaaaaa;
+    font-style: italic;
+}
+
+.gallery-grid {
+    /* Using Flexbox for a simple, responsive grid */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem; /* Space between items */
+    justify-content: center; /* Center items horizontally */
 }
 
 .photo-item {
-    margin-bottom: 3rem; /* Space between photo items */
-    display: block; /* Make figure take full width available */
-    max-width: 700px; /* Max width of the photo container (adjust as needed) */
-    margin-left: auto; /* Center the figure block */
-    margin-right: auto; /* Center the figure block */
+    margin-bottom: 0; /* Remove bottom margin as gap handles spacing */
+    /* Adjust width based on how many columns you want */
+    /* Example: ~3 columns on wider screens */
+    width: calc(33.333% - 1.5rem); /* Adjust calculation based on gap */
+    min-width: 280px; /* Minimum width before wrapping */
+    background-color: #252525; /* Add a subtle background to the item card */
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column; /* Stack image and caption */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* --- Fancy Hover Effect --- */
+.photo-item:hover {
+    transform: translateY(-5px) scale(1.02); /* Lift and slightly enlarge */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
 }
 
 .photo-item a {
-    display: block; /* Ensure link wraps image correctly */
-    cursor: zoom-in; /* Indicate the image is clickable */
+    display: block;
+    cursor: zoom-in;
+    overflow: hidden; /* Hide parts of image that might scale out */
+    border-radius: 3px; /* Match image radius */
 }
 
-/* THIS IS THE KEY for image sizing on the main page */
 .photo-item img {
-    display: block; /* Remove extra space below image */
-    max-width: 100%; /* Makes image responsive - IT WON'T EXCEED CONTAINER WIDTH */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto 0.75rem auto; /* Center image within figure, add space below */
-    border-radius: 3px; /* Optional: slightly rounded corners */
-    border: 1px solid #333; /* Subtle border around image */
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 0.75rem auto;
+    border-radius: 3px;
+    border: 1px solid #3f3f3f; /* Slightly lighter border */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transition for image zoom/filter */
 }
+
+.photo-item a:hover img {
+     /* Optional: Slight zoom or effect on image itself on hover */
+     /* transform: scale(1.05); */
+     filter: brightness(1.1);
+}
+
 
 .photo-item figcaption {
     font-size: 0.9rem;
-    color: #bbbbbb; /* Lighter grey for captions */
-    text-align: center; /* Center the caption text */
+    color: #bbbbbb;
+    text-align: center;
     font-style: italic;
-    padding: 0 0.5rem; /* Add some horizontal padding if needed */
+    padding: 0.5rem 0.5rem 0 0.5rem; /* Added top padding */
+    margin-top: auto; /* Push caption to bottom if image height varies */
 }
+
+/* --- Contact Section --- */
+.contact-section p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #cccccc;
+}
+
+.contact-links {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.contact-links li {
+    margin-bottom: 1rem;
+}
+
+.contact-links a {
+    color: #79c7ff; /* Brighter blue for links */
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.contact-links a:hover {
+    color: #ffffff; /* White on hover */
+    text-decoration: underline;
+}
+
+.contact-links i { /* Style for Font Awesome icons */
+    margin-right: 0.75rem;
+    width: 20px; /* Ensure consistent icon spacing */
+    text-align: center;
+    color: #6bb9f0; /* Match link color or use a distinct icon color */
+}
+
+.contact-links a:hover i {
+    color: #ffffff; /* Match link hover color */
+}
+
 
 /* --- Footer Styling --- */
 .main-footer {
     text-align: center;
-    padding: 1.5rem 1rem;
-    margin-top: 2rem;
-    font-size: 0.85rem;
-    color: #777777; /* Dim grey for footer */
+    padding: 2rem 1rem; /* Increased padding */
+    margin-top: 3rem; /* More space above footer */
+    font-size: 0.9rem; /* Slightly larger footer text */
+    color: #888888;
+    background-color: #111111; /* Slightly different dark shade for footer */
     border-top: 1px solid #333;
 }
 
-/* --- Links --- */
-a {
-   color: #6bb9f0; /* Light blue for links */
+/* --- General Links (outside of specific sections like contact) --- */
+/* (Currently no general links in the body, but good practice) */
+main a {
+   color: #79c7ff; /* Consistent link blue */
    text-decoration: none;
 }
-a:hover {
+main a:hover {
     text-decoration: underline;
+    color: #aaddff; /* Slightly lighter blue on hover */
 }
 
 /* --- Fancybox Dark Theme Adjustments --- */
+/* These look good, keeping them as they are */
 body .fancybox__container {
-    --fancybox-bg: rgba(10, 10, 10, 0.92); /* Darker lightbox background */
-    --fancybox-color: #e5e5e5; /* Light text */
+    --fancybox-bg: rgba(10, 10, 10, 0.95); /* Even darker background */
+    --fancybox-color: #e8e8e8;
+    --fancybox-toolbar-color: #ccc; /* Toolbar button color */
+    --fancybox-toolbar-hover-color: #fff; /* Toolbar button hover color */
 }
 .fancybox__caption {
-    background: rgba(0, 0, 0, 0.8); /* Darker caption background */
-    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 15px 25px; /* More padding */
     border-top: 1px solid #444;
-    color: #ccc; /* Caption text color */
+    color: #d0d0d0; /* Slightly brighter caption text */
+    font-size: 0.95rem;
 }
-/* Adjust button colors if needed */
-.fancybox__button {
-   color: #ccc; /* Light color for buttons */
-}
+/* Optional: Adjust button background on hover */
 .fancybox__button:hover {
-   color: #fff;
-   background: rgba(255, 255, 255, 0.1); /* Slight background on hover */
+   background: rgba(255, 255, 255, 0.1);
 }
 
 
 /* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-    .main-header h1 {
-        font-size: 2.5rem;
-    }
-    .content-wrapper {
-        margin: 1.5rem auto;
-        padding: 0 0.8rem;
-    }
-    .about-section,
-    .gallery-section {
-        padding: 1.5rem;
-    }
-    section h2 {
-        font-size: 1.6rem;
-    }
+@media (max-width: 992px) { /* Adjust breakpoint for 2 columns */
     .photo-item {
-        max-width: 95%; /* Allow images to be slightly wider on smaller screens */
+        width: calc(50% - 1rem); /* ~2 columns */
     }
 }
 
-@media (max-width: 480px) {
+
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2.4rem;
+    }
+     .main-header .subtitle {
+        font-size: 1rem;
+    }
+    .content-wrapper {
+        margin: 2rem auto;
+        padding: 0 1rem; /* Less padding on smaller screens */
+        width: 95%;
+    }
+    .content-section {
+        padding: 2rem 1.5rem; /* Less padding */
+    }
+    .content-section h2 {
+        font-size: 1.7rem;
+    }
+    .about-section p {
+        font-size: 1rem;
+    }
+
+    /* Keep 2 columns for tablets if desired, or switch to 1 */
+     /* .photo-item {
+        width: calc(50% - 1rem);
+    } */
+}
+
+@media (max-width: 576px) { /* Stack gallery items on small screens */
     .main-header h1 {
         font-size: 2rem;
     }
-    section h2 {
-        font-size: 1.4rem;
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+    .gallery-grid {
+        gap: 1.5rem; /* Smaller gap */
+    }
+    .photo-item {
+        width: 100%; /* Full width - 1 column */
+        min-width: unset; /* Remove min-width */
     }
     .photo-item figcaption {
         font-size: 0.85rem;
+    }
+    .contact-links a {
+        font-size: 1rem;
     }
 }
