@@ -16,6 +16,30 @@
     <!-- Your Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+        .video-item a {
+            position: relative; /* Needed for absolute positioning of the icon */
+            display: block; /* Ensure link wraps image correctly */
+        }
+        .video-item a::after {
+            content: '▶'; /* Play symbol */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem; /* Adjust size */
+            color: rgba(255, 255, 255, 0.8); /* White with some transparency */
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Add shadow for visibility */
+            pointer-events: none; /* Make sure icon doesn't block clicks on the link */
+            opacity: 0.8;
+            transition: opacity 0.2s ease-in-out;
+        }
+        .video-item a:hover::after {
+            opacity: 1;
+        }
+    </style>
+
+    
 </head>
 <body>
 
@@ -35,6 +59,20 @@
         <section id="gallery" class="gallery-section">
             <h2>Gallery</h2>
 
+
+            <!-- === START VIDEO ITEM === -->
+            <figure class="photo-item video-item"> 
+                <a href="photos/video1.mp4"
+                   data-fancybox="gallery"
+                   data-caption="Virginia Tech Carnival Kick Off"
+                   data-thumb="photos/videot1.jpg">
+                    <img src="photos/videot1.jpg" alt="Virginia Tech Carnival Kick Off" loading="lazy">
+                </a>
+                <figcaption>Virginia Tech Carnival Kick Off</figcaption>
+            </figure>
+            <!-- === END VIDEO ITEM === -->
+
+            
             <!-- === Photo Item 1 === -->
             <figure class="photo-item">
                 <a href="photos/photo1.jpg"
