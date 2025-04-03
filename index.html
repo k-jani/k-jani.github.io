@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kush Jani - Photography Portfolio</title> <!-- CHANGE 'Your Name' -->
+    <title>Kush Jani - Photography Portfolio</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Using Montserrat for headings and Lato for body text -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
     <!-- Fancybox CSS -->
@@ -21,7 +20,7 @@
 <body>
 
     <header class="main-header">
-        <h1>Kush Jani</h1> <!-- CHANGE 'Your Name' -->
+        <h1>Kush Jani</h1>
     </header>
 
     <main class="content-wrapper">
@@ -29,178 +28,213 @@
             <h2>About Me</h2>
             <p>
                 Welcome to my portfolio! I have been doing photography for around six years with the Nikon D3000 and Nikon Z7, along with the occasional use of the Sony a7R III and Hasselblad X1D II.
-                I enjoy taking photos of sports, architecture, nature, people and even dabble in astrophotography. Some of my fairly diverse work is shown below, but please reach out if you would like to see more of my work. 
+                I enjoy taking photos of sports, architecture, nature, people and even dabble in astrophotography. Some of my fairly diverse work is shown below, but please reach out if you would like to see more of my work.
             </p>
         </section>
 
         <section id="gallery" class="gallery-section">
             <h2>Gallery</h2>
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 1 === -->
             <figure class="photo-item">
-                <a href="photos/photo1.jpg" data-fancybox="gallery" data-caption="Caption for photo 1 (shows in lightbox)">
-                    <!-- Display the THUMBNAIL version on the page -->
-                    <img src="photos/photo1.jpg" alt="Descriptive text about photo 1" loading="lazy">
+                <a href="photos/photo1.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Wooden pier extending into calm water under a blue sky"
+                   data-thumb="photos/photot1.jpg"> {/* Use small thumb for Fancybox internal thumb */}
+                    {/* Display FULL SIZE version on the page (As requested, but not recommended for performance) */}
+                    <img src="photos/photo1.jpg" alt="Wooden pier stretching out over calm water with reflections" loading="lazy">
                 </a>
-                 <!-- Caption visible directly below the image on the page -->
-                <figcaption>Caption 1</figcaption>
-                 <!--
-                    IMPORTANT:
-                    1. `href` in <a>: Link to the LARGE, optimized version for Fancybox.
-                    2. `data-fancybox="gallery"`: Groups images into one gallery.
-                    3. `data-caption`: Text shown in the Fancybox lightbox overlay.
-                    4. `src` in <img>: Link to the SMALLER thumbnail version for the main page display.
-                    5. `alt`: Essential description for accessibility.
-                    6. `loading="lazy"`: Defers loading off-screen thumbnails.
-                    7. `<figcaption>`: Visible caption below the image on the main page.
-                 -->
+                <figcaption>Pier Reflection</figcaption> {/* Visible caption on page */}
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 14 === -->
             <figure class="photo-item">
-                <a href="photos/photo14.jpg" data-fancybox="gallery" data-caption="A different, maybe longer, caption for photo 2 in the lightbox.">
-                    <img src="photos/photo14.jpg" alt="Descriptive text about photo 2" loading="lazy">
+                <a href="photos/photo14.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Wide angle view of a soccer player running with the ball during a night game"
+                   data-thumb="photos/photot14.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo14.jpg" alt="Soccer player dribbling ball on field at night, stadium background" loading="lazy">
                 </a>
-                <figcaption>Caption 2</figcaption>
+                <figcaption>Soccer Match Action</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 13 === -->
             <figure class="photo-item">
-                <a href="photos/photo13.jpg" data-fancybox="gallery" data-caption="Caption number three for the lightbox view.">
-                    <img src="photos/photo13.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                <a href="photos/photo13.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Soccer player in orange and black uniform advances the ball"
+                   data-thumb="photos/photot13.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo13.jpg" alt="Side view of soccer player running with the ball during night game" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>Advancing the Ball</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 12 === -->
             <figure class="photo-item">
-                <a href="photos/photo12.jpg" data-fancybox="gallery" data-caption="Caption number four for the lightbox view.">
-                    <img src="photos/photo12.jpg" alt="Descriptive text about photo 4" loading="lazy">
+                <a href="photos/photo12.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Close-up action shot of a soccer player dribbling past a defender"
+                   data-thumb="photos/photot12.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo12.jpg" alt="Two soccer players competing for the ball during a night game" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>On the Move</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 5 === -->
             <figure class="photo-item">
-                <a href="photos/photo5.jpg" data-fancybox="gallery" data-caption="Caption number 5 for the lightbox view.">
-                    <img src="photos/photo5.jpg" alt="Descriptive text about photo 5" loading="lazy">
+                <a href="photos/photo5.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Abstract view of architectural details illuminated by purple light at night"
+                   data-thumb="photos/photot5.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo5.jpg" alt="Corrugated metal pipe and wall lit with vibrant purple light" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>Purple Glow</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 2 === -->
             <figure class="photo-item">
-                <a href="photos/photo2.jpg" data-fancybox="gallery" data-caption="Caption number three for the lightbox view.">
-                    <img src="photos/photo2.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                <a href="photos/photo2.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Silhouette of a sunflower against a vibrant orange and purple sunset"
+                   data-thumb="photos/photot2.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo2.jpg" alt="Sunflower silhouetted against a colorful sunset sky" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>Sunset Sunflower</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 4 === -->
             <figure class="photo-item">
-                <a href="photos/photo4.jpg" data-fancybox="gallery" data-caption="Caption number three for the lightbox view.">
-                    <img src="photos/photo4.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                <a href="photos/photo4.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Astronomical observatory dome lit against a starry night sky"
+                   data-thumb="photos/photot4.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo4.jpg" alt="Observatory building with dome open to the starry night sky" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>Observatory Night</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 10 === -->
             <figure class="photo-item">
-                <a href="photos/photo10.jpg" data-fancybox="gallery" data-caption="Caption number three for the lightbox view.">
-                    <img src="photos/photo10.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                <a href="photos/photo10.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Soccer player kicking the ball during a night game, referee nearby"
+                   data-thumb="photos/photot10.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo10.jpg" alt="Soccer player mid-kick on field at night, stadium lights visible" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>The Kick</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 11 === -->
             <figure class="photo-item">
-                <a href="photos/photo11.jpg" data-fancybox="gallery" data-caption="Caption number three for the lightbox view.">
-                    <img src="photos/photo11.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                <a href="photos/photo11.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Worker looking out from the service window of a food truck"
+                   data-thumb="photos/photot11.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo11.jpg" alt="Young man in chef coat looking through a food truck window" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>Food Truck Service</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 15 === -->
             <figure class="photo-item">
-                <a href="photos/photo15.jpg" data-fancybox="gallery" data-caption="Caption number three for the lightbox view.">
-                    <img src="photos/photo15.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                <a href="photos/photo15.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Wide interior view of a large, empty library reading room with wooden ceiling"
+                   data-thumb="photos/photot15.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo15.jpg" alt="Spacious library reading room with rows of tables and lamps" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>Library Reading Room</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 16 === -->
             <figure class="photo-item">
-                <a href="photos/photo16.jpg" data-fancybox="gallery" data-caption="Caption number three for the lightbox view.">
-                    <img src="photos/photo16.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                <a href="photos/photo16.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Soccer referee holding a ball and gesturing during a night game"
+                   data-thumb="photos/photot16.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo16.jpg" alt="Referee on soccer field at night holding ball and pointing" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>Referee's Call</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+             <!-- === Photo Item 3 === -->
             <figure class="photo-item">
-                <a href="photos/photo3.jpg" data-fancybox="gallery" data-caption="Caption number three for the lightbox view.">
-                    <img src="photos/photo3.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                <a href="photos/photo3.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Rabbit peeking its head above tall green grass"
+                   data-thumb="photos/photot3.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo3.jpg" alt="Close up of a rabbit hiding in lush green grass" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>Hidden Rabbit</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 6 === -->
             <figure class="photo-item">
-                <a href="photos/photo6.jpg" data-fancybox="gallery" data-caption="Caption number three for the lightbox view.">
-                    <img src="photos/photo6.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                <a href="photos/photo6.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Goose standing in snow with wings outstretched, honking"
+                   data-thumb="photos/photot6.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo6.jpg" alt="Large goose flapping wings in a snowy landscape" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>Snow Goose</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 7 === -->
             <figure class="photo-item">
-                <a href="photos/photo7.jpg" data-fancybox="gallery" data-caption="Caption number three for the lightbox view.">
-                    <img src="photos/photo7.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                <a href="photos/photo7.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Close-up of vibrant orange marigold flowers with water droplets"
+                   data-thumb="photos/photot7.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo7.jpg" alt="Macro shot of orange marigolds with blurred background" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>Marigolds</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 8 === -->
             <figure class="photo-item">
-                <a href="photos/photo8.jpg" data-fancybox="gallery" data-caption="Caption number three for the lightbox view.">
-                    <img src="photos/photo8.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                <a href="photos/photo8.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Green hummingbird perched on a red bird feeder"
+                   data-thumb="photos/photot8.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo8.jpg" alt="Small hummingbird drinking from a red plastic feeder" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>Hummingbird Feeder</figcaption>
             </figure>
             <!-- === End Photo Item === -->
 
-            <!-- === Start Photo Item === -->
+            <!-- === Photo Item 9 === -->
             <figure class="photo-item">
-                <a href="photos/photo9.jpg" data-fancybox="gallery" data-caption="Caption number three for the lightbox view.">
-                    <img src="photos/photo9.jpg" alt="Descriptive text about photo 3" loading="lazy">
+                <a href="photos/photo9.jpg"
+                   data-fancybox="gallery"
+                   data-caption="Night sky with stars, the Milky Way faintly visible, and a possible meteor streak"
+                   data-thumb="photos/photot9.jpg"> {/* Use small thumb */}
+                    <img src="photos/photo9.jpg" alt="Starry night sky over a dark field landscape with a light streak" loading="lazy">
                 </a>
-                <figcaption>Caption 3</figcaption>
+                <figcaption>Night Sky View</figcaption>
             </figure>
             <!-- === End Photo Item === -->
-            
-            <!-- === Add More Photo Items Here === -->
-            <!-- Copy and paste the <figure class="photo-item"> block above for each new photo. -->
-            <!-- Remember to change href, data-caption, src, alt, and figcaption for each one. -->
+
+            <!-- === Add More Photo Items Here following the pattern === -->
 
         </section>
     </main>
 
     <footer class="main-footer">
-        <p>© 2023 Your Name. All rights reserved.</p> <!-- CHANGE Year and Name -->
+        <p>© 2024 Kush Jani. All rights reserved.</p> <!-- Updated Year and Name -->
     </footer>
 
     <!-- Fancybox JS -->
@@ -208,16 +242,18 @@
     <script>
       // Initialize Fancybox
       Fancybox.bind("[data-fancybox]", {
-        // Optional: Custom options here
+        // Custom options
         buttons: [
             "slideShow",
-            //"thumbs",
+            // "thumbs", // Thumbs button is commented out, so the strip won't show by default
             "zoom",
             "fullScreen",
             "close"
         ],
         loop: true, // Go from last image back to first
-        infobar: true, // Show "1 / 3" indicator
+        infobar: true, // Show "1 / 16" indicator
+        // NOTE: Even with 'thumbs' button off, providing data-thumb helps Fancybox
+        // potentially optimize internal processes or if you enable thumbs later.
       });
     </script>
 
